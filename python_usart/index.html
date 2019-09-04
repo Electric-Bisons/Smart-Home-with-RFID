@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#temperature").load("data.txt");
+			setInterval(function() {
+				$("#temperature").load("data.txt");
+			}, 0);
+		});
+    </script>
+	<title>Smart Home Interface</title>
+</head>
+
+<body>
+<section class="header">
+	<div>
+		<h1>SMART HOME</h1>
+		<h3 id="temperature"></h3>
+	</div>
+</section>
+
+<section class="content">
+	<div>
+		<h2>Small steps => a bigger project</h2>
+	</div>
+	<div>
+		<p>Before any introduction I want to tell you 5 things about me:</p>
+		<ol>
+			<li>My name is Andrei</li>
+			<li>I am 20 years old</li>
+			<li>I love programming</li>
+			<li>I like both cats and dogs (maybe animals in general)</li>
+			<li>This page was made only for fun so don't judge me :)</li>
+		</ol>
+	</div>
+	
+	<div class="presentation">
+		<h2>Short introduction to my project</h2>
+		<p>This project represents a simulation of a Smart House system.
+			It is made using an Atmega32 uC on an EvB 5.1 Kit, some sensors
+			and a little embedded C, Python and HTML scripting. The house 
+			uses sensors to do some actions in background when some events 
+			are taking place and it can perform some user actions.</p>
+		<p>The sensors that I have used are:</p>
+		<ol>
+			<li>DS18B20 - temperature sensor</li>
+			<li>MQ-2 - gas sensor</li>
+			<li>HC-SR501 - proximity sensor</li>
+			<li>TSOP4836 - IR receiver</li>
+		</ol>
+		<p>Other equipment:</p>
+		<ol>
+			<li>LCD display</li>
+			<li>L298N driver and DC motor</li>
+			<li>green LED for the light</li>
+			<li>IR remote control</li>
+			<li>Buzzer</li>
+		</ol>
+		<h2>Project main utilities</h2>
+		<p>The house has 2 states. The house is locked 
+			by default and it askes for a password PIN to unlock.
+			In background it has some security checks for the 
+			temperature and gas leaks. The proximity sensor is 
+			activated only in locked state. If any gas leak or high 
+			temperature is detected, the fan starts and a message is 
+			displayed on the LCD and the buzzer starts.</p>
+		<p>After unlock there are a few menus to manually control 
+			the house: temperature display, AC control menu and 
+			light menu.</p>
+		<h2>Implementation</h2>
+		<p>I have started by coding in C the main drivers for the sensors 
+			and peripherals.</p>
+		<img src="images/drivers.jpg" style="width:35%;margin-left:5%;"></img>
+		<p>After I have finished the drivers, I have started the final project 
+			This was the time to find if all the work was not wasted.</p>
+		<p>It took about a week to finish the main projects and it looked ok.
+			But that was not all...</p>
+		<h2>Taking the project to the next level</h2>
+		<p>Because I ran out of ideas, I said why not implement the remote 
+			control inside an application. So, I did it.</p>
+		<img src="images/remote.jpg" style="width:35%;margin-left:5%;"></img>
+		<p>So, now the house could be controlled with the remote control 
+			and with the application with USART protocol sending and recieving 
+			data to/from the board.</p>
+		<p>And, of course, this was not enough...And because of that, I had 
+			the idea to implement a website to show the live temperature of the 
+			house and, why not, present my project to you using this site :)</p>
+	</div>
+</section>
+
+<section class="footer">
+	<div>
+		<p>&copy; Stipl3x Studios</p>
+	</div>
+</section>
+</body>
+</html>
