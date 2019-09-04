@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="main.js"></script>
+    <title>RFID-Control panel</title>
+   
+</head>
+<body>
+    
+    <style>
+    .button{
+                background-color: #1c87c9;
+                border: none;
+                color: white;
+                padding: 10px 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 10px;
+                margin: 4px 2px;
+                cursor: pointer;
+                position: relative;
+                right:-20px;     
+            }
+            .button:hover {background-color: #3e8e41}    
+        h1 {
+                color: peru;
+                font-family:Courier;
+                font-size: 100%;
+            }
+        body{
+                background-color:Silver;
+            }
+    </style>
+    <h1>RFID Room Attendance system</h1>
+    <label for="uid">UID</label>
+    <input type="text" name="uid" id="numar" disabled>
+    <a href ="/data" class ="button">UID Database</a>
+    <ul id="history"></ul>
+</body>
+</html>
